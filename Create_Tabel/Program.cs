@@ -30,6 +30,10 @@ namespace Create_Tabel
                 con.Close();
             }
         }
+        static void Main(string[] args)
+        {
+            new Program().CreateTable();
+        }
     }
 }
 
