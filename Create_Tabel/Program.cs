@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Create_Tabel
 {
-    class Program
-    {
-        static void Main(string[] args)
+    public void CreateTable() {
+        SqlConnection con = null;
+        try
         {
+            con = new SqlConnection("data source=LAPTOP-EED9RP81\\ERDAWYNE;database=ProdiTI;Integrated Security = TRUE");
+            con.Open();
+
+            SqlCommand cm = new SqlCommand("create table Mahasiswa_Coba (NIM char(12) not null primary key," +
+                "Nama Varchar(50), Alamat varchar(255), Jenis_Kelamin char(1))", con);
+            cm.ExecuteNonQuery();
         }
     }
+    
 }
